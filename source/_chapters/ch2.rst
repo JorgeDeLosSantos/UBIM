@@ -1,0 +1,3 @@
+Una aproximación: utilizando pylab
+==================================
+

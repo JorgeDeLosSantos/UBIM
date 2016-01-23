@@ -199,7 +199,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'UBIM.tex', u'Una breve introducción a Matplotlib',
-   u'Pedro Jorge De Los Santos', 'book'),
+   u'Pedro Jorge De Los Santos', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

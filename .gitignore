@@ -161,3 +161,6 @@ TSWLatexianTemp*
 # toPDF & toHTML
 toHTML.py
 toPDF.py
+
+# Build folder
+build
