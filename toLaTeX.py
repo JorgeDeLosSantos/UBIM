@@ -5,4 +5,5 @@ source = "source"
 build = "build"
 instr = "sphinx-build -b latex "+source+" "+build
 os.system(instr)
-#os.startfile(build+r"\index.html")
+os.chdir(build)
+execfile("toPDF.py")
