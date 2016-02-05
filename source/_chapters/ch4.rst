@@ -84,15 +84,16 @@ Para las secciones siguientes se asumirá que en todo momento se han importado e
 	plt.show()
 
 
-Gráficas bidimensionales
-------------------------
+Gráficas en coordenadas rectangulares
+-------------------------------------
 
-Coordenadas rectangulares
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Hemos estado utilizando este tipo de gráficas en todos los ejemplos anteriores, entendemos 
+por coordenadas rectangulares aquellas en donde cada punto del plano o espacio está dado 
+por sus coordenadas (x,y) o (x,y,z) y las cuales hemos tenido *hasta en la sopa* desde nuestro 
+primer curso de álgebra en el nivel secundario. Por ahora vamos a tomar el caso bidimensional, 
+y en la mayoría de situaciones vamos a graficar un array que contiene los valores de la variable 
+independiente (digamos *x*) contra un array que contiene los valores de la variable dependiente 
+(digamos *f(x)*), utilizando, claro está, la función ``plot``.
 
-Baaaaa
-
-Coordenadas polares
-^^^^^^^^^^^^^^^^^^^
-
-Baaaaa
+Por ejemplo supongamos que queremos graficar la función :math:`f(x)=x^2 sin(x)` en el intervalo 
+:math:`[0,2\pi]` 
