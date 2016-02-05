@@ -5,23 +5,25 @@ algunas cosas elementales de NumPy.
 
 ### Contenido
 
-*Capítulo 1. Aquí comenzamos* 
-*Capítulo 2. Una primer aproximación: utilizando pylab* 
-*Capítulo 3. Lo que hay que saber de NumPy*
-*Capítulo 4. Pyplot y lo básico*
+**Capítulo 1. Aquí comenzamos**
+
+**Capítulo 2. Una primer aproximación: utilizando pylab**
+
+**Capítulo 3. Lo que hay que saber de NumPy**
+
+**Capítulo 4. Pyplot y lo básico**
 
 
 ### Status y versiones
 
-Actualmente en desarrollo la versión 0.1.0.
+*Actualmente en desarrollo la versión 0.1.0.*
 
-Para descargar la versión actual abra el link siguiente:
 
-[Descargar versión actual](http://labdls.blogspot.mx)
+Links de descarga (PDFs):
 
-** Versiones **
+[Descargar versión actual completa](http://labdls.blogspot.mx)
 
-[Versión 0.1.0](http://labdls.blogspot.mx)
+[Descargar borrador (Versión actual en desarrollo)](http://labdls.blogspot.mx)
 
 
 ### Licencia
