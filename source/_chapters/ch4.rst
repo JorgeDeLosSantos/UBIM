@@ -109,20 +109,136 @@ Enseguida definimos el array de la función o variable dependiente:
 	
 	y = (x**2)*(np.sin(x))
 
+Ahora creamos el objeto ``figure``:
+
+.. code:: python
+
+	fig = plt.figure()
+
+Utilizando el método ``add_subplot`` del objeto ``fig`` creamos el axes a utilizar:
+
+.. code:: python
+
+	ax = fig.add_subplot(111)
+
+Con nuestro axes creado, podemos utilizar el método ``plot`` para trazar la gráfica correspondiente:
+
+.. code:: python
+
+	ax.plot(x, y)
+
+Finalmente debemos utilizar la instrucción ``plt.show()`` para mostrar las gráficas que hemos generado. Juntando 
+todo el código anterior se tiene:
+
+.. code:: python
+
+	x = np.linspace(0,10)
+	y = np.cos(x)
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+
+	ax.plot(x, y)
 
 
-Etiquetas básicas
------------------
+.. _fig1:
+
+.. figure:: src/ch4/img_01.png
+	:scale: 80%
+
+	Gráfica coordenadas rectangulares
+
+
+Etiquetas básicas (xlabel, ylabel & title)
+------------------------------------------
+
+Naturalmente una gráfica sin información extra más que las líneas trazadas es inútil desde donde se vea, porque cuando 
+vamos a graficar algo el objetivo es transmitir información legible y en cierto punto amigable a terceros. Para ello 
+en una gráfica se debe incluir información acerca de los datos que estamos representando.
+
+En casi cualquier gráfica que veamos en libros, artículos o cualquier otro tipo de publicación vamos a tener al 
+menos etiquetados los ejes coordenados, y una título o pequeña descripción que muestre lo que se representa. 
+Para colocar esa información básica en una gráfica, Matplotlib proporciona los métodos ``set_xlabel``, ``set_ylabel`` y 
+``set_title`` de la clase ``Axes``, que de manera respectiva, colocan una etiqueta en el eje horizontal, una etiqueta en el 
+eje vertical y un título en la parte superior del ``Axes``.
+
+En el siguiente código se muestra cómo colocar las etiquetas mencionadas anteriormente:
+
+.. code:: python
+
+	T = [50, 60, 70, 80, 90, 100, 110, 120]
+	P = [12, 20, 33, 54, 90, 148, 244, 403]
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+
+	ax.plot(T, P)
+	ax.set_xlabel(u"Temperatura (°C)")
+	ax.set_ylabel(u"Presión (KPa)")
+	ax.set_title(u"Relación P-T")
+
+
+.. _fig2:
+
+.. figure:: src/ch4/img_02.png
+	:scale: 80%
+
+	Gráfica con etiquetas
+
+
+
+Estilos, colores y grosores de líneas
+-------------------------------------
+
+
 
 
 
 Coordenadas polares
 -------------------
 
+Para trazar gráficas en coordenadas polares en Matplotlib se utiliza también el método ``plot``, pero cuando se 
+crea el axes debemos cambiar el tipo de proyección que utilizaremos a coordenadas polares, lo cual puede hacerse 
+de las utilizando el *keyword argument* ``projection``:
+
+.. code:: python
+
+	fig = plt.figure()
+	polar_axes = fig.add_subplot(111, projection="polar")
+
+O bien utilizando ``polar``:
+
+.. code:: python
+
+	fig = plt.figure()
+	polar_axes = fig.add_subplot(111, polar=True)
+
+
+Por ejemplo, trazando la rosa polar :math:`r(\theta) = 0.25\,\cos(3\theta)`:
+
+.. code:: python
+
+	theta = np.linspace(0,2*np.pi,1000)
+	r = 0.25*np.cos(3*theta)
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111, polar=True)
+
+	ax.plot(theta, r)
+
+
+.. _fig3:
+
+.. figure:: src/ch4/img_03.png
+	:scale: 80%
+
+	Gráfica rosa polar
 
 
 Scatter Plots
 -------------
+
+
 
 
 Gráficas de barras
@@ -132,6 +248,5 @@ Gráficas de barras
 
 Gráficas de pastel
 ------------------
-
 
 
