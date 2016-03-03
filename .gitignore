@@ -165,3 +165,7 @@ pythontex-files-*/
 
 # Latexian
 TSWLatexianTemp*
+
+## Makefile and make.bat
+# Makefile
+# make.bat

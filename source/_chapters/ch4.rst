@@ -84,8 +84,8 @@ Para las secciones siguientes se asumirá que en todo momento se han importado e
 	plt.show()
 
 
-Gráficas en coordenadas rectangulares
--------------------------------------
+Coordenadas rectangulares
+-------------------------
 
 Hemos estado utilizando este tipo de gráficas en todos los ejemplos anteriores, entendemos 
 por coordenadas rectangulares aquellas en donde cada punto del plano o espacio está dado 
@@ -96,4 +96,42 @@ independiente (digamos *x*) contra un array que contiene los valores de la varia
 (digamos *f(x)*), utilizando, claro está, la función ``plot``.
 
 Por ejemplo supongamos que queremos graficar la función :math:`f(x)=x^2 sin(x)` en el intervalo 
-:math:`[0,2\pi]` 
+:math:`[0,2\pi]`. Primero debemos crear el vector o array de la variable independiente en 
+el intervalo de interés, para ello podemos utilizar ``linspace``:
+
+.. code:: python
+
+	x = np.linspace(0,2*np.pi)
+
+Enseguida definimos el array de la función o variable dependiente:
+
+.. code:: python
+	
+	y = (x**2)*(np.sin(x))
+
+
+
+Etiquetas básicas
+-----------------
+
+
+
+Coordenadas polares
+-------------------
+
+
+
+Scatter Plots
+-------------
+
+
+Gráficas de barras
+------------------
+
+
+
+Gráficas de pastel
+------------------
+
+
+
