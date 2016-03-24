@@ -1,5 +1,4 @@
-Lo que hay que saber de NumPy
-=============================
+# Lo que hay que saber de NumPy
 
 NumPy es una librería de de uso muy extendido en la comunidad técnico-científica de Python, 
 es imprescindible y un estándar para situaciones en las cuales se manejan datos en 
@@ -13,76 +12,74 @@ datos que requieren cierto procesamiento mediante herramientas matemáticas.
 En este capítulo se tratarán funciones básicas de NumPy que permiten crear y modificar arrays, 
 que luego se usarán para representarlos en Matplotlib.
 
-Creando arrays en Numpy
------------------------
+## Creando arrays en Numpy
 
 Primero, vamos a suponer que para todas las instrucciones subsecuentes, antes se ha importado 
 el módulo NumPy utilizando el *alias* np, como sigue:
 
-.. code:: python
+```python
+>>> import numpy as np
+```
 
-	>>> import numpy as np
-
-La manera *básica* de crear un array es utilizando la función ``np.array``, a la cual se debe 
+La manera *básica* de crear un array es utilizando la función `np.array`, a la cual se debe 
 pasar como argumento una lista de valores numéricos para definir un vector o bien una 
 lista de listas para definir matrices, por ejemplo:
 
-.. code:: python
+```python
+>>> X=np.array([1,2,3])
+```
 
-	>>> X=np.array([1,2,3])
+Lo anterior crea un objeto de la clase `numpy.ndarray`
 
-Lo anterior crea un objeto de la clase ``numpy.ndarray``
-
-.. code:: python
-
-	>>> type(X)
-	<type 'numpy.ndarray'>
+```python
+>>> type(X)
+<type 'numpy.ndarray'>
+```
 
 Para definir una matriz A dada por:
 
-.. math::
-	
-	A = \left(\begin{matrix}
-	1 & 2 & 3 \\
-	4 & 5 & 6 \\
-	7 & 8 & 9 \\
-	\end{matrix}\right)
+{$$}
+A = \left(\begin{matrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{matrix}\right)
+{/$$}
 
 se tiene que pasar una lista de listas como argumento, donde cada sublista representa una fila 
 de la matriz:
 
-.. code:: python
-
-	>>> A=np.array([[1,2,3],[4,5,6],[7,8,9]])
-	>>> A
-	array([[1, 2, 3],
-	       [4, 5, 6],
-	       [7, 8, 9]])
-
+```python
+>>> A=np.array([[1,2,3],[4,5,6],[7,8,9]])
+>>> A
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+```
 
 Esta es la forma *manual* de crear un array en NumPy, definiendo uno a uno los elementos, lo cual 
 resultaría *pesado* en arreglos de grandes dimensiones. NumPy proporciona algunas funciones que 
 permiten crear arrays con valores que siguen un patrón especifico, por ejemplo, valores en un intervalo 
-:math:`[a,b]` con incrementos :math:`n`, o bien cierta cantidad de elementos en un rango, o incluso 
+{$$}[a,b]{/$$} con incrementos {$$}n{/$$}, o bien cierta cantidad de elementos en un rango, o incluso 
 arreglos de ceros y unos.
 
-La función que más usaremos en este texto será ``linspace``, la cual permite crear un array de un 
+La función que más usaremos en este texto será `linspace`, la cual permite crear un array de un 
 cierto número de elementos en un intervalo fijo. Por ejemplo:
 
-.. code:: python
+```python
+>>> np.linspace(2,10,5)
+array([  2.,   4.,   6.,   8.,  10.])
+```
 
-	>>> np.linspace(2,10,5)
-	array([  2.,   4.,   6.,   8.,  10.])
+Lo anterior crea un array de 5 elementos en el intervalo {$$}[2,10]{/$$}.
 
-Lo anterior crea un array de 5 elementos en el intervalo :math:`[2,10]`.
-
-Otra función muy similar es ``arange``, la cual también necesita como argumentos los extremos del 
+Otra función muy similar es `arange`, la cual también necesita como argumentos los extremos del 
 intervalo, pero en lugar del número de elementos se indica el paso o incremento.
 
-.. code:: python
+```python
+>>> np.arange(2,10,2)
+array([2, 4, 6, 8])
+```
 
-	>>> np.arange(2,10,2)
-	array([2, 4, 6, 8])
-
-Note que ``arange`` no incluye el extremo superior, es decir, toma los valores del intervalo abierto 
-por la derecha :math:`[a,b)`.
+Note que `arange` no incluye el extremo superior, es decir, toma los valores del intervalo abierto 
+por la derecha {$$}[a,b){/$$}.
