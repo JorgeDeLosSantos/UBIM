@@ -114,7 +114,7 @@ todo el código anterior se tiene:
 
 	ax.plot(x, y)
 
-{width=60%}
+{width=70%}
 ![](images/ch4/img_01.png)
 
 ## Etiquetas básicas (xlabel, ylabel & title)
@@ -142,7 +142,7 @@ En el siguiente código se muestra cómo colocar las etiquetas mencionadas anter
 	ax.set_ylabel(u"Presión (KPa)")
 	ax.set_title(u"Relación P-T")
 
-{width=60%}
+{width=70%}
 ![](images/ch4/img_02.png)
 
 
@@ -166,7 +166,7 @@ Estos estilos pueden establecerse mediante el *keyword argument* `linestyle`.
 	ax.plot(x, y+2, ls="-.")
 	ax.plot(x, y+3, ls=":")
 
-{width=60%}
+{width=70%}
 ![](images/ch4/img_03a.png)
 
 Note que el *keyword argument* `linestyle` puede abreviarse como `ls` y sigue funcionando 
@@ -185,7 +185,7 @@ correspondientes al modelo RGB.
 	ax.plot(x, y, color=(0,1,1))
 	ax.plot(x, y+1, color="#ff00ff")
 
-{width=60%}
+{width=70%}
 ![](images/ch4/img_03b.png)
 
 ## Coordenadas polares
@@ -212,7 +212,7 @@ Por ejemplo, trazando la rosa polar {$$}r(\theta) = 0.25\,\cos(3\theta){/$$}:
 
 	ax.plot(theta, r)
 
-{width=60%}
+{width=70%}
 ![](images/ch4/img_03.png)
 
 
