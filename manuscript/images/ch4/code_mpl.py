@@ -43,11 +43,10 @@ def img_03():
 	fig = plt.figure()
 	ax = fig.add_subplot(111)
 
-	ax.plot(x, y, linewidth=5, linestyle="--", color=(0,1,0))
-	ax.plot(x, y-1, lw=2, ls="dotted", color="#ff00ff")
-	ax.plot(x, y+1, "r.", lw=2)
+	ax.plot(x, y, color=(0,1,1))
+	ax.plot(x, y+1, color="#ff00ff")
 	
-	plt.savefig("img_03.png")
+	plt.savefig("img_03b.png")
 	
 def img_04():
 	theta = np.linspace(0,2*np.pi,1000)

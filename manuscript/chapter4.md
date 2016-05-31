@@ -10,7 +10,6 @@ de graficación/visualización.
 
 Un código típico utilizando pylab sería:
 
-{linenos=off}
 	from pylab import *
 
 	x = linspace(0,10)
@@ -38,22 +37,20 @@ Ambos códigos producen exactamente lo mismo.
 
 Ahora veremos una tercera forma (*mejorada*) de hacer lo anterior:
 
-```python	
-import matplotlib.pyplot as plt
-import numpy as np
+	import matplotlib.pyplot as plt
+	import numpy as np
 
-x = np.linspace(0,10)
-y = np.cos(x)
+	x = np.linspace(0,10)
+	y = np.cos(x)
 
-fig = plt.figure()
-ax = fig.add_subplot(111)
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
 
-ax.plot(x,y,lw=2,ls="--")
-ax.set_xlabel("Tiempo (s)")
-ax.set_ylabel("Amplitud (mm)")
+	ax.plot(x,y,lw=2,ls="--")
+	ax.set_xlabel("Tiempo (s)")
+	ax.set_ylabel("Amplitud (mm)")
 
-plt.show()
-```
+	plt.show()
 
 Y sí, en este texto vamos a utilizar esta *manera* de hacer las cosas, ¿la diferencia?: 
 objetos, métodos y esas cosas propias de la programación orientada a objetos, que nos 
@@ -67,14 +64,12 @@ Para las secciones siguientes se asumirá que en todo momento se han importado e
 `pyplot` y `NumPy` y que al final del código se ha incluido la instrucción 
 `plt.show()` para mostrar lo que se ha graficado.
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-# .
-# .
-# .
-plt.show()
-```
+	import matplotlib.pyplot as plt
+	import numpy as np
+	# .
+	# .
+	# .
+	plt.show()
 
 ## Coordenadas rectangulares
 
@@ -90,49 +85,36 @@ Por ejemplo supongamos que queremos graficar la función {$$}f(x)=x^2 sin(x){/$$
 {$$}[0,2\pi]{/$$}. Primero debemos crear el vector o array de la variable independiente en 
 el intervalo de interés, para ello podemos utilizar `linspace`:
 
-```python
-x = np.linspace(0,2*np.pi)
-```
+	x = np.linspace(0,2*np.pi)
 
 Enseguida definimos el array de la función o variable dependiente:
 
-```python
-y = (x**2)*(np.sin(x))
-```
+	y = (x**2)*(np.sin(x))
 
 Ahora creamos el objeto `figure`:
 
-```python
-fig = plt.figure()
-```
+	fig = plt.figure()
 
 Utilizando el método `add_subplot` del objeto `fig` creamos el axes a utilizar:
 
-```python
-ax = fig.add_subplot(111)
-```
+	ax = fig.add_subplot(111)
 
 Con nuestro axes creado, podemos utilizar el método `plot` para trazar la gráfica correspondiente:
 
-```python
-ax.plot(x, y)
-```
+	ax.plot(x, y)
 
 Finalmente debemos utilizar la instrucción `plt.show()` para mostrar las gráficas que hemos generado. Juntando 
 todo el código anterior se tiene:
 
-```python
-x = np.linspace(0,10)
-y = np.cos(x)
+	x = np.linspace(0,10)
+	y = np.cos(x)
 
-fig = plt.figure()
-ax = fig.add_subplot(111)
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
 
-ax.plot(x, y)
-```
+	ax.plot(x, y)
 
 ![](images/ch4/img_01.png)
-
 
 ## Etiquetas básicas (xlabel, ylabel & title)
 
@@ -148,23 +130,61 @@ eje vertical y un título en la parte superior del `Axes`.
 
 En el siguiente código se muestra cómo colocar las etiquetas mencionadas anteriormente:
 
-```python
-T = [50, 60, 70, 80, 90, 100, 110, 120]
-P = [12, 20, 33, 54, 90, 148, 244, 403]
+	T = [50, 60, 70, 80, 90, 100, 110, 120]
+	P = [12, 20, 33, 54, 90, 148, 244, 403]
 
-fig = plt.figure()
-ax = fig.add_subplot(111)
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
 
-ax.plot(T, P)
-ax.set_xlabel(u"Temperatura (°C)")
-ax.set_ylabel(u"Presión (KPa)")
-ax.set_title(u"Relación P-T")
-```
+	ax.plot(T, P)
+	ax.set_xlabel(u"Temperatura (°C)")
+	ax.set_ylabel(u"Presión (KPa)")
+	ax.set_title(u"Relación P-T")
 
 ![](images/ch4/img_02.png)
 
 
 ## Estilos, colores y grosores de líneas
+
+Estilizar líneas es una cuestión muy común, puesto que muchas veces es necesario diferenciar 
+una serie de datos de otra mediante su aspecto. Para ello Matplotlib dispone de algunas 
+utilidades para proporcionar grosores, colores y estilos a una línea.
+
+Existen cuatro estilos de líneas en Matplotlib: sólida, discontinua, de guión-punto y punteada.
+Estos estilos pueden establecerse mediante el *keyword argument* `linestyle`.
+
+	x = np.linspace(0,10)
+	y = np.cos(x)
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+
+	ax.plot(x, y, linestyle="-")
+	ax.plot(x, y+1, ls="--")
+	ax.plot(x, y+2, ls="-.")
+	ax.plot(x, y+3, ls=":")
+
+![](images/ch4/img_03a.png)
+
+Note que el *keyword argument* `linestyle` puede abreviarse como `ls` y sigue funcionando 
+correctamente.
+
+Los colores de una línea pueden indicarse utilizando el *keyword argument* `color` y 
+pasándole en este una cadena hexadecimal o bien una tupla de tres valores con los valores 
+correspondientes al modelo RGB.
+
+	x = np.linspace(0,10)
+	y = np.cos(x)
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+
+	ax.plot(x, y, color=(0,1,1))
+	ax.plot(x, y+1, color="#ff00ff")
+
+![](images/ch4/img_03b.png)
+
+
 
 
 ## Coordenadas polares
@@ -173,29 +193,23 @@ Para trazar gráficas en coordenadas polares en Matplotlib se utiliza también e
 crea el axes debemos cambiar el tipo de proyección que utilizaremos a coordenadas polares, lo cual puede hacerse 
 de las utilizando el *keyword argument* `projection`:
 
-```python
-fig = plt.figure()
-polar_axes = fig.add_subplot(111, projection="polar")
-```
+	fig = plt.figure()
+	polar_axes = fig.add_subplot(111, projection="polar")
 
 O bien utilizando `polar`:
 
-```python
-fig = plt.figure()
-polar_axes = fig.add_subplot(111, polar=True)
-```
+	fig = plt.figure()
+	polar_axes = fig.add_subplot(111, polar=True)
 
 Por ejemplo, trazando la rosa polar {$$}r(\theta) = 0.25\,\cos(3\theta){/$$}:
 
-```python
-theta = np.linspace(0,2*np.pi,1000)
-r = 0.25*np.cos(3*theta)
+	theta = np.linspace(0,2*np.pi,1000)
+	r = 0.25*np.cos(3*theta)
 
-fig = plt.figure()
-ax = fig.add_subplot(111, polar=True)
+	fig = plt.figure()
+	ax = fig.add_subplot(111, polar=True)
 
-ax.plot(theta, r)
-```
+	ax.plot(theta, r)
 
 ![](images/ch4/img_03.png)
 

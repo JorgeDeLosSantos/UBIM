@@ -138,21 +138,19 @@ show()
 Para poder graficar en dos o más axes se puede utilizar la función `subplot` que permite 
 crear un arreglo de axes, véase el ejemplo a continuación:
 
-```python
-t = linspace(0,2)
-x = 12*t**3 - 18*t**2 + 2*t + 5
-v = diff(x)
-# Gráfica de posición
-subplot(2,1,1)
-plot(t,x,"b")
-ylabel(u"Posición (m)")
-# Gráfica de velocidad
-subplot(2,1,2)
-plot(t[:-1],v,"g")
-xlabel("Tiempo (s)")
-ylabel(u"Velocidad (m/s)")
-show()
-```
+	t = linspace(0,2)
+	x = 12*t**3 - 18*t**2 + 2*t + 5
+	v = diff(x)
+	# Gráfica de posición
+	subplot(2,1,1)
+	plot(t,x,"b")
+	ylabel(u"Posición (m)")
+	# Gráfica de velocidad
+	subplot(2,1,2)
+	plot(t[:-1],v,"g")
+	xlabel("Tiempo (s)")
+	ylabel(u"Velocidad (m/s)")
+	show()
 
 ![Múltiples axes](images/ch2/img_06.png)
 
