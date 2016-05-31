@@ -10,32 +10,29 @@ de graficación/visualización.
 
 Un código típico utilizando pylab sería:
 
-```python
-from pylab import *
+{linenos=off}
+	from pylab import *
 
-x = linspace(0,10)
-y = cos(x)
+	x = linspace(0,10)
+	y = cos(x)
 
-plot(x,y,lw=2,ls="--")
-xlabel("Tiempo (s)")
-ylabel("Amplitud (mm)")
-show()
-```
+	plot(x,y,lw=2,ls="--")
+	xlabel("Tiempo (s)")
+	ylabel("Amplitud (mm)")
+	show()
 
 ¿Y utilizando pyplot + NumPy?
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+	import matplotlib.pyplot as plt
+	import numpy as np
 
-x = np.linspace(0,10)
-y = np.cos(x)
+	x = np.linspace(0,10)
+	y = np.cos(x)
 
-plt.plot(x,y,lw=2,ls="--")
-plt.xlabel("Tiempo (s)")
-plt.ylabel("Amplitud (mm)")
-plt.show()
-```
+	plt.plot(x,y,lw=2,ls="--")
+	plt.xlabel("Tiempo (s)")
+	plt.ylabel("Amplitud (mm)")
+	plt.show()
 
 Ambos códigos producen exactamente lo mismo. 
 
