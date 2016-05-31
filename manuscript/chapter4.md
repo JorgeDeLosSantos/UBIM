@@ -188,6 +188,31 @@ correspondientes al modelo RGB.
 {width=70%}
 ![](images/ch4/img_03b.png)
 
+El grosor de una línea se establece mediante el argumento `linewidth`  o su forma abreviada 
+`lw`.
+
+	x = np.linspace(0,10)
+	y = np.cos(x)
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111)
+
+	ax.plot(x, y, lw=2)
+	ax.plot(x, y+1, lw=4)
+	ax.plot(x, y+2, linewidth=6)
+
+{width=70%}
+![](images/ch4/img_03c.png)
+
+Tanto el color (con ciertas limitaciones) como el estilo pueden especificarse como un tercer 
+argumento en el método `plot` sin necesidad de utilizar *keyword arguments*:
+
+	ax.plot(x, y, "r--")
+
+Donde lo anterior le indica a Matplotlib que debe trazar una línea discontinua de color rojo. 
+Sin embargo  está limitado a unos cuantos colores predeterminados que puede encontrar 
+en la siguiente [referencia](http://matplotlib.org/api/colors_api.html).
+
 ## Coordenadas polares
 
 Para trazar gráficas en coordenadas polares en Matplotlib se utiliza también el método `plot`, pero cuando se 
@@ -220,6 +245,7 @@ Por ejemplo, trazando la rosa polar {$$}r(\theta) = 0.25\,\cos(3\theta){/$$}:
 
 
 ## Gráficas de barras
+
 
 
 ## Gráficas de pastel
